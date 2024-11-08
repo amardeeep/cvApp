@@ -1,8 +1,8 @@
-function Input ({labelName,value,handleNameChange}){
+function Input ({labelName,value,handleChange,type}){
     return (
         <>  
         <label htmlFor={labelName}>{labelName}</label>
-        <input type="text" value={value} onChange={handleNameChange}/>
+        <input type={type} value={value} onChange={handleChange}/>
         </>
     )
 }
