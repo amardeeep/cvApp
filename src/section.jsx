@@ -1,7 +1,10 @@
 import Input from "./input"
+import Header from "./header"
+import './section.css'
 function Section ({name,formData,handleResponsibilitiesChange,handleYearJoinedChange,handlePositionTitleChange,handleYearsWorkedChange ,handleNameChange,handleEmailChange,handlePhoneChange,handleCompanyNameChange,handleSchoolNameChange,handleTitleOfStudyChange,handleYearOfStudyChange}){
     return name=="Edit"?<>
-        <section>
+        <section className="edit">
+            <Header name={"Edit Section"}></Header>
             <Input labelName={"Name"} type={'text'} value={formData.name} handleChange={handleNameChange}/>
             <Input labelName={"E-Mail"} type={'email'}value={formData.email} handleChange={handleEmailChange}/>
             <Input labelName={"Phone Number"} type={'number'}value={formData.phone} handleChange={handlePhoneChange}/>
@@ -13,11 +16,14 @@ function Section ({name,formData,handleResponsibilitiesChange,handleYearJoinedCh
             <Input labelName={"Years Worked"} type={'number'} value={formData.yearsWorked} handleChange={handleYearsWorkedChange}/>
             <Input labelName={"Year Joined"} type={'number'} value={formData.yearJoined} handleChange={handleYearJoinedChange}/>
             <Input labelName={"Responibilities"} type={'text'} value={formData.responsibilities} handleChange={handleResponsibilitiesChange}/>
+            <div className="buttonsEdit">
             <button>Edit</button>
             <button>Submit</button>
+            </div>
         </section>
     </>:<>
-    <section>
+    <section className="display">
+        <Header name={"Your Resume"}></Header>
         <h1>Name {formData.name}</h1>
         <p>E-Mail {formData.email}</p>
         <p>Phone Number {formData.phone}</p>

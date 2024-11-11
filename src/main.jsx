@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Section from './section'
+import './main.css'
 function Main(){
     const [formData,setFormData]=useState({
         name:"Amardeep",

@@ -1,3 +1,4 @@
+import './input.css'
 function Input ({labelName,value,handleChange,type}){
     return (
         <>  
