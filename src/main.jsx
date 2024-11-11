@@ -15,6 +15,13 @@ function Main(){
         yearsWorked:4,
         responsibilities:"Responsibilities"
     });
+    const [editable,setEditable]=useState(false);
+    function handleEdit(){
+        setEditable(true);
+    }
+    function handleSubmit(){
+        setEditable(false);
+    }
     function handleYearJoinedChange(e){
         setFormData({
             ...formData,
@@ -84,8 +91,8 @@ function Main(){
     return (
         <>
         <main>
-            <Section name="Edit" handleResponsibilitiesChange={handleResponsibilitiesChange} handleYearsWorkedChange={handleYearsWorkedChange} handleYearJoinedChange={handleYearJoinedChange} handlePositionTitleChange={handlePositionTitleChange} handleNameChange={handleNameChange} handleEmailChange={handleEmailChange} handlePhoneChange={handlePhoneChange} handleCompanyNameChange={handleCompanyNameChange} handleSchoolNameChange={handleSchoolNameChange} handleTitleOfStudyChange={handleTitleOfStudyChange} handleYearOfStudyChange={handleYearOfStudyChange} formData={formData} />
-            <Section name="Display" handleResponsibilitiesChange={handleResponsibilitiesChange} handleYearsWorkedChange={handleYearsWorkedChange} handleYearJoinedChange={handleYearJoinedChange} handlePositionTitleChange={handlePositionTitleChange}  handleNameChange={handleNameChange} handleEmailChange={handleEmailChange} handlePhoneChange={handlePhoneChange} handleCompanyNameChange={handleCompanyNameChange} handleSchoolNameChange={handleSchoolNameChange} handleTitleOfStudyChange={handleTitleOfStudyChange} handleYearOfStudyChange={handleYearOfStudyChange} formData={formData}/>
+            <Section name="Edit" editable={editable} handleEdit={handleEdit} handleSubmit={handleSubmit} handleResponsibilitiesChange={handleResponsibilitiesChange} handleYearsWorkedChange={handleYearsWorkedChange} handleYearJoinedChange={handleYearJoinedChange} handlePositionTitleChange={handlePositionTitleChange} handleNameChange={handleNameChange} handleEmailChange={handleEmailChange} handlePhoneChange={handlePhoneChange} handleCompanyNameChange={handleCompanyNameChange} handleSchoolNameChange={handleSchoolNameChange} handleTitleOfStudyChange={handleTitleOfStudyChange} handleYearOfStudyChange={handleYearOfStudyChange} formData={formData} />
+            <Section name="Display" editable={editable} handleEdit={handleEdit} handleSubmit={handleSubmit} handleResponsibilitiesChange={handleResponsibilitiesChange} handleYearsWorkedChange={handleYearsWorkedChange} handleYearJoinedChange={handleYearJoinedChange} handlePositionTitleChange={handlePositionTitleChange}  handleNameChange={handleNameChange} handleEmailChange={handleEmailChange} handlePhoneChange={handlePhoneChange} handleCompanyNameChange={handleCompanyNameChange} handleSchoolNameChange={handleSchoolNameChange} handleTitleOfStudyChange={handleTitleOfStudyChange} handleYearOfStudyChange={handleYearOfStudyChange} formData={formData}/>
         </main>
         </>
     )
