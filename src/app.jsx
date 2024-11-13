@@ -4,6 +4,7 @@ import './index.css'
 import Footer from './footer'
 import Main from './main'
 import Nav from './nav'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Nav></Nav>

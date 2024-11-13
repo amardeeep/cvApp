@@ -1,21 +1,43 @@
 import Input from "./input"
 import Header from "./header"
 import './section.css'
+import { useState } from "react"
 function Section ({name,handleEdit,handleSubmit,editable,formData,handleResponsibilitiesChange,handleYearJoinedChange,handlePositionTitleChange,handleYearsWorkedChange ,handleNameChange,handleEmailChange,handlePhoneChange,handleCompanyNameChange,handleSchoolNameChange,handleTitleOfStudyChange,handleYearOfStudyChange}){
+    const [showDiv,setShowDiv]=useState(false);
+    const [showEducation,setEducation]=useState(false);
+    const [showExperience,setExperience]=useState(false);
+    function handleShow(){
+        setShowDiv(!showDiv)
+    }
+    function handleShowEducation(){
+        setEducation(!showEducation)
+    }
+    function handleShowExperience(){
+        setExperience(!showExperience)
+    }
     return name=="Edit"?<>
-        <section className="edit">
+        <section className="edit" >
             <Header name={"Edit Section"}></Header>
-            <Input editable={editable} labelName={"Name"} type={'text'} value={formData.name} handleChange={handleNameChange}/>
-            <Input editable={editable} labelName={"E-Mail"} type={'email'}value={formData.email} handleChange={handleEmailChange}/>
-            <Input editable={editable} labelName={"Phone Number"} type={'number'}value={formData.phone} handleChange={handlePhoneChange}/>
-            <Input editable={editable} labelName={"School Name"} type={'text'} value={formData.schoolName} handleChange={handleSchoolNameChange}/>
-            <Input editable={editable} labelName={"Title Of Study"} type={'text'} value={formData.titleOfStudy} handleChange={handleTitleOfStudyChange}/>
-            <Input editable={editable} labelName={"Year Of Study"} type={'number'} value={formData.yearOfStudy} handleChange={handleYearOfStudyChange}/>
-            <Input editable={editable} labelName={"Company Name"} type={'text'} value={formData.companyName} handleChange={handleCompanyNameChange}/>
-            <Input editable={editable} labelName={"Position Title"} type={'text'} value={formData.positionTitle} handleChange={handlePositionTitleChange}/>
-            <Input editable={editable} labelName={"Years Worked"} type={'number'} value={formData.yearsWorked} handleChange={handleYearsWorkedChange}/>
-            <Input editable={editable} labelName={"Year Joined"} type={'number'} value={formData.yearJoined} handleChange={handleYearJoinedChange}/>
-            <Input editable={editable} labelName={"Responibilities"} type={'text'} value={formData.responsibilities} handleChange={handleResponsibilitiesChange}/>
+            <div className="personal">
+                <h2>Personal Details <button onClick={handleShow}>Show</button></h2>
+            <Input editable={editable} labelName={"Name"} type={'text'} value={formData.name} handleChange={handleNameChange} show={showDiv}/>
+            <Input editable={editable} labelName={"E-Mail"} type={'email'}value={formData.email} handleChange={handleEmailChange} show={showDiv}/> 
+            <Input editable={editable} labelName={"Phone Number"} type={'number'}value={formData.phone} handleChange={handlePhoneChange} show={showDiv}/>
+            </div>
+            <div className="schoolDetails">
+                <h2>Academic Details <button onClick={handleShowEducation}>Show</button></h2>
+            <Input editable={editable} labelName={"School Name"} type={'text'} value={formData.schoolName} handleChange={handleSchoolNameChange} show={showEducation}/>
+            <Input editable={editable} labelName={"Title Of Study"} type={'text'} value={formData.titleOfStudy} handleChange={handleTitleOfStudyChange} show={showEducation}/>
+            <Input editable={editable} labelName={"Year Of Study"} type={'number'} value={formData.yearOfStudy} handleChange={handleYearOfStudyChange} show={showEducation}/>
+            </div>
+            <div className="experience">
+                <h2>Previous experience <button onClick={handleShowExperience}>Show</button></h2>
+            <Input editable={editable} labelName={"Company Name"} type={'text'} value={formData.companyName} handleChange={handleCompanyNameChange} show={showExperience}/>
+            <Input editable={editable} labelName={"Position Title"} type={'text'} value={formData.positionTitle} handleChange={handlePositionTitleChange} show={showExperience}/>
+            <Input editable={editable} labelName={"Years Worked"} type={'number'} value={formData.yearsWorked} handleChange={handleYearsWorkedChange} show={showExperience}/>
+            <Input editable={editable} labelName={"Year Joined"} type={'number'} value={formData.yearJoined} handleChange={handleYearJoinedChange} show={showExperience}/>
+            <Input editable={editable} labelName={"Responibilities"} type={'text'} value={formData.responsibilities} handleChange={handleResponsibilitiesChange} show={showExperience}/>
+            </div>
             <div className="buttonsEdit">
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleSubmit}>Submit</button>

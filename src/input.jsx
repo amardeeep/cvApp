@@ -1,11 +1,11 @@
 import './input.css'
-function Input ({editable,labelName,value,handleChange,type}){
-    return (
+function Input ({show,editable,labelName,value,handleChange,type}){
+    return(
         <>  
-        <label htmlFor={labelName}>{labelName}</label>
-        {editable&&<input type={type} value={value} onChange={handleChange}/>}
-        {!editable&&<input type={type} value={value} onChange={handleChange} disabled/>}
-        </>
+        <label hidden={show} htmlFor={labelName}>{labelName} </label>
+        {editable&&<input hidden={show} type={type} value={value} onChange={handleChange} />}
+        {!editable&&<input  hidden={show} type={type} value={value} onChange={handleChange} disabled/>}
+        </>       
     )
 }
 export default Input

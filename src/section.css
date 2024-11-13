@@ -12,3 +12,8 @@
     min-width:70%;
     padding: 30px;
 }
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
