@@ -1,7 +1,15 @@
 nav{
     display: flex;
+    position:sticky;
+    top: 0;
     flex-direction: row;
     min-width: 90%;
     justify-content: space-between;
     padding: 10px 30px;
+    min-height: 0.5rem;
+    border-bottom: 1px solid grey;
+}
+.themeToggleButtons{
+    display: flex;
+    flex-direction: row;
 }
