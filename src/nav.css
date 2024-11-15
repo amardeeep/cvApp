@@ -13,3 +13,7 @@ nav{
     display: flex;
     flex-direction: row;
 }
+span{
+    font-size: xx-large;
+    align-self: center;
+}
