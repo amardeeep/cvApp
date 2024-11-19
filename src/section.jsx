@@ -38,7 +38,7 @@ function Section ({name,handleEdit,handleSubmit,editable,formData,handleResponsi
             <Input editable={editable} labelName={"Year Joined"} type={'number'} value={formData.yearJoined} handleChange={handleYearJoinedChange} show={showExperience}/>
             <Input editable={editable} labelName={"Responibilities"} type={'text'} value={formData.responsibilities} handleChange={handleResponsibilitiesChange} show={showExperience}/>
             </div>
-            <div className="buttonsEdit editSubSection">
+            <div className="buttonsEdit">
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleSubmit}>Submit</button>
             </div>
@@ -46,29 +46,31 @@ function Section ({name,handleEdit,handleSubmit,editable,formData,handleResponsi
     </>:<>
     <section className="display">
         <Header name={"Your Resume"}></Header>
-        <div className="personalDisplay">
-            <h3>Name {formData.name}</h3>
-            <div className="horizontalFlex">
-                <p>E-Mail {formData.email}</p>
-                <p>Phone Number {formData.phone}</p>
+        <div className="resume">
+            <div className="personalDisplay">
+                <h3>Name {formData.name}</h3>
+                <div className="horizontalFlex">
+                    <p>E-Mail {formData.email}</p>
+                    <p>Phone Number {formData.phone}</p>
+                </div>
             </div>
+            <div className="schoolDetailsDisplay">
+                <h3>Education :</h3>
+                <p>School Name {formData.schoolName}</p>
+                <p>Title Of Study {formData.titleOfStudy}</p>
+                <p>Year Of Study {formData.yearOfStudy}</p>
+            </div>
+            
+            <div className="workDisplay">
+                <h3>Experience :</h3>
+                <p>Company Name {formData.companyName}</p>
+                <p>Position Title {formData.positionTitle}</p>
+                <p>Year Joined {formData.yearJoined} </p>
+                <p>Years Worked {formData.yearsWorked}</p>
+                <p>Responsibilities {formData.responsibilities}</p>
+            </div>
+            <button>Save As Pdf</button>
         </div>
-        <div className="schoolDetailsDisplay">
-            <h3>Education :</h3>
-            <p>School Name {formData.schoolName}</p>
-            <p>Title Of Study {formData.titleOfStudy}</p>
-            <p>Year Of Study {formData.yearOfStudy}</p>
-        </div>
-        
-        <div className="workDisplay">
-            <h3>Experience :</h3>
-            <p>Company Name {formData.companyName}</p>
-            <p>Position Title {formData.positionTitle}</p>
-            <p>Year Joined {formData.yearJoined} </p>
-            <p>Years Worked {formData.yearsWorked}</p>
-            <p>Responsibilities {formData.responsibilities}</p>
-        </div>
-        <button>Save As Pdf</button>
     </section>
     </>
 }

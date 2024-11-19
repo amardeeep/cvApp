@@ -10,8 +10,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
+:root.dark{
+  --background-color:black;
+  --color:white;
+  --border:1px solid white;
+}
+:root.light{
+  --background-color:white;
+  --color:black;
+  --border:1px solid black;
+}
+
 *{
   box-sizing: border-box;
 }

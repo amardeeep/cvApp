@@ -8,10 +8,14 @@ nav{
     padding: 10px 30px;
     min-height: 0.5rem;
     border-bottom: 1px solid grey;
+    align-items: center;
 }
 .themeToggleButtons{
     display: flex;
     flex-direction: row;
+    background-color: var(--background-color);
+    color: var(--color);
+    border: var(--border);
 }
 span{
     font-size: xx-large;
