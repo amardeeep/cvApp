@@ -5,8 +5,8 @@ function Nav (){
             <nav>
                 <span>CV Builder</span>
                 <div className="themeToggleButtons">
-                    <button>Light</button>
-                    <button>Dark</button>
+                    <button className='slide-up'>Light</button>
+                    <button className='slide-up'>Dark</button>
                 </div>
             </nav>
         </>

@@ -16,8 +16,18 @@ nav{
     background-color: var(--background-color);
     color: var(--color);
     border: var(--border);
+    flex-basis: 20%;
+    justify-content: center;
+    gap: 10px;
+}
+.slide-up{
+    transition: transform(translateY(0%)) 1s ease-out;
+}
+.slide-up:hover{
+    transform: translateY(-5%);
 }
 span{
     font-size: xx-large;
     align-self: center;
+    flex-basis: 80%;
 }
