@@ -1,6 +1,6 @@
 import Input from "./input"
 import Header from "./header"
-import './section.css'
+import styles from '../styles/section.module.css'
 import { useState } from "react"
 function Section ({name,handleEdit,handleSubmit,editable,formData,handleResponsibilitiesChange,handleYearJoinedChange,handlePositionTitleChange,handleYearsWorkedChange ,handleNameChange,handleEmailChange,handlePhoneChange,handleCompanyNameChange,handleSchoolNameChange,handleTitleOfStudyChange,handleYearOfStudyChange}){
     const [showDiv,setShowDiv]=useState(false);
@@ -19,19 +19,25 @@ function Section ({name,handleEdit,handleSubmit,editable,formData,handleResponsi
         <section className="edit" >
             <Header name={"Edit Section"}></Header>
             <div className="personal editSubSection">
-                <h2>Personal Details <button onClick={handleShow}>Show</button></h2>
+                <div className="headingSubSection">
+                    <h2>Personal Details</h2> <button onClick={handleShow}>Show</button>
+                </div>
             <Input editable={editable} labelName={"Name"} type={'text'} value={formData.name} handleChange={handleNameChange} show={showDiv}/>
             <Input editable={editable} labelName={"E-Mail"} type={'email'}value={formData.email} handleChange={handleEmailChange} show={showDiv}/> 
             <Input editable={editable} labelName={"Phone Number"} type={'number'}value={formData.phone} handleChange={handlePhoneChange} show={showDiv}/>
             </div>
             <div className="schoolDetails editSubSection">
-                <h2>Academic Details <button onClick={handleShowEducation}>Show</button></h2>
+                <div className="headingSubSection">
+                    <h2>Academic Details </h2><button onClick={handleShowEducation}>Show</button>
+                </div>
             <Input editable={editable} labelName={"School Name"} type={'text'} value={formData.schoolName} handleChange={handleSchoolNameChange} show={showEducation}/>
             <Input editable={editable} labelName={"Title Of Study"} type={'text'} value={formData.titleOfStudy} handleChange={handleTitleOfStudyChange} show={showEducation}/>
             <Input editable={editable} labelName={"Year Of Study"} type={'number'} value={formData.yearOfStudy} handleChange={handleYearOfStudyChange} show={showEducation}/>
             </div>
             <div className="experience editSubSection">
-                <h2>Previous experience <button onClick={handleShowExperience}>Show</button></h2>
+                <div className="haedingSubSection">
+                    <h2>Previous experience </h2><button onClick={handleShowExperience}>Show</button>
+                </div>
             <Input editable={editable} labelName={"Company Name"} type={'text'} value={formData.companyName} handleChange={handleCompanyNameChange} show={showExperience}/>
             <Input editable={editable} labelName={"Position Title"} type={'text'} value={formData.positionTitle} handleChange={handlePositionTitleChange} show={showExperience}/>
             <Input editable={editable} labelName={"Years Worked"} type={'number'} value={formData.yearsWorked} handleChange={handleYearsWorkedChange} show={showExperience}/>

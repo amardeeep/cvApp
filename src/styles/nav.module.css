@@ -9,6 +9,7 @@ nav{
     min-height: 0.5rem;
     border-bottom: 1px solid grey;
     align-items: center;
+    background-color: #242424;
 }
 .themeToggleButtons{
     display: flex;
@@ -20,10 +21,10 @@ nav{
     justify-content: center;
     gap: 10px;
 }
-.slide-up{
+.slideUp{
     transition: transform(translateY(0%)) 1s ease-out;
 }
-.slide-up:hover{
+.slideUp:hover{
     transform: translateY(-5%);
 }
 span{

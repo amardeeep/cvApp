@@ -1,4 +1,4 @@
-import './header.css'
+import '../styles/header.module.css'
 function Header ({name}){
     return (
         <>

@@ -1,0 +1,20 @@
+section{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.resume{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.editSubSection{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.headingSubSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

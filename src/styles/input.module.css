@@ -1,0 +1,15 @@
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 2rem;
+    max-width: 80%;
+}
+.inputDiv>*{
+    flex: 1;
+}
+input{
+    padding: 0.5rem;
+    font-size: 2rem;
+
+}
